@@ -1,0 +1,754 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Open Sans", sans-serif;
+    
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 10px;
+}
+
+/* start header  */
+/* start nav  */
+nav {
+    background-color: white;
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+}
+
+
+.navbar {
+    height: 100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    text-decoration: none;
+    color: black;
+    font-size: 30px;
+}
+
+.logo::after {
+    content: ".";
+    color: brown;
+}
+
+.navbar .nav-links {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
+
+.navbar .nav-links a {
+    text-decoration: none;
+    color: #ababb6;
+    font-weight: bold;
+    padding: 10px 0;
+    position: relative;
+}
+
+.navbar .nav-links .active {
+    color: black;
+}
+
+.navbar .nav-links .active::after,
+.navbar .nav-links a::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: brown;
+    transition: 0.5s;
+}
+
+.navbar .nav-links .active::after,
+.navbar .nav-links a:hover::after{
+    width: 100%;
+}
+
+.navbar .nav-links a:hover {
+    color: black;
+}
+
+.navbar .icons {
+    display: flex;
+    gap: 20px;
+}
+
+.navbar .icons i {
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.navbar .icons .bar {
+    display: none;
+}
+/* end nav  */
+
+/* start hero  */
+.hero {
+    height: 100vh;
+    background-color: #eeeeee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero .container {
+    transform: translateY(50px);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.hero .container .hero-text {
+    flex: 1;
+    max-width: 480px;
+}
+
+.hero .container .hero-text h2 {
+    font-family: "Amatic SC", sans-serif;
+    font-size: 60px;
+    color: #37373f;
+}
+
+.hero .container .hero-text p {
+    color: #4f4f5a;
+    line-height: 1.5;
+    margin: 15px 0;
+}
+
+.hero .hero-text .hero-links {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.hero .hero-text .hero-links button {
+    width: 150px;
+    height: 50px;
+    color: white;
+    font-size: 15px;
+    background-color: #ce1212;
+    border-style: none;
+    border-radius: 0 50px 50px;
+}
+
+.hero .hero-text .hero-links a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    font-weight: 500;
+    color: black;
+}
+
+.hero .hero-text .hero-links a:hover {
+    color: #ce1212;
+    transition: 0.5s;
+}
+
+.hero .hero-text .hero-links .play-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.hero .hero-text .hero-links .play-icon::before {
+    content: "";
+    position: absolute;
+    left: -7px;
+    width: 50%;
+    height: 100%;
+    border-style: solid;
+    border-width: 7px 0 7px 7px;
+    border-radius: 50px 0 0 50px;
+    color: #ce1212;
+}
+
+.hero .hero-img {
+    width: 100%;
+    filter: drop-shadow(2px 4px 6px black);
+}
+
+.hero .hero-img:hover {
+    animation: vibe 1s infinite;
+}
+
+@keyframes vibe {
+    0%{
+        transform: translate(1px) rotate(1deg);
+    }
+    10%{
+        transform: translate(-1px) rotate(-1deg);
+    }
+    20%{
+        transform: translate(1px) rotate(0deg);
+    }
+    30%{
+        transform: translate(-1px) rotate(-1deg);
+    }
+    40%{
+        transform: translate(1px) rotate(1deg);
+    }
+    50%{
+        transform: translate(-1px) rotate(0deg);
+    }
+    60%{
+        transform: translate(1px) rotate(1deg);
+    }
+    70%{
+        transform: translate(-1px) rotate(-1deg);
+    }
+    80%{
+        transform: translate(1px) rotate(0deg);
+    }
+    90%{
+        transform: translate(-1px) rotate(-1deg);
+    }
+    100%{
+        transform: translate(1px) rotate(1deg);
+    }
+}
+/* end hero  */
+/* end header  */
+
+section {
+    padding: 50px 0;
+}
+
+.section-title {
+    width: max-content;
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.section-title h3 {
+    font-weight: 300;
+    text-transform: uppercase;
+}
+.section-title h2 {
+    font-family: "Amatic SC", sans-serif;
+    font-size: 50px;
+    font-weight: 300;
+}
+
+.section-title .red {
+    font-family: "Amatic SC", sans-serif;
+    color: #ce1212;
+}
+/* start chefs section  */
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.cards .item {
+    position: relative;
+    overflow: hidden;
+    width: 340px;
+    border-radius: 10px;
+    box-shadow: 3px 3px 10px 0 rgba(0, 0, 0, 0.3);
+    transition: 0.5s;
+}
+
+.cards .item:hover {
+    transform: scale(1.05);
+}
+
+.cards .item:hover .card-social {
+    right: 10px;
+}
+
+.cards .item .card-img {
+    position: relative;
+}
+
+.cards .item .card-img::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 20%;
+    background-image: url(./img/svg.png);
+    background-size: cover;
+    color: #ffffff;
+}
+
+.cards .item .card-img img{
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+}
+
+.cards .item .card-social {
+    list-style: none;
+    width: max-content;
+    padding: 15px;
+    background-color: #ffffff4d;
+    border-radius: 5px;
+    position: absolute;
+    top: 20px;
+    right: -50px;
+    transition: 0.5s;
+}
+
+.cards .item .card-social li:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+.cards .item .card-social a {
+    color: #ababb6;
+    font-size: 20px;
+    transition: 0.5s;
+}
+
+.cards .item .card-social a:hover {
+    color: #37373f;
+}
+
+.cards .item .card-text {
+    padding: 15px;
+    text-align: center;
+}
+
+.cards .item .card-text h5 {
+    color: #4f4f5a;
+    font-weight: 400;
+    margin: 3px 0 7px;
+}
+.cards .item .card-text p {
+    color: #4f4f5a;
+    font-style: italic;
+    font-size: 15px;
+}
+/* end chefs section  */
+
+/* start gallery section  */
+.gallery {
+    background-color: #eee;
+}
+
+.pizza {
+    grid-area: pizza;
+}
+
+.beef-steaks {
+    grid-area: beef-steaks;
+}
+
+.burger {
+    grid-area: burger;
+}
+
+.levitation-pizza {
+    grid-area: levitation-pizza;
+    transform: translateY(-40px);
+}
+
+.frittata {
+    grid-area: frittata;
+}
+
+.crispy {
+    grid-area: crispy;
+    transform: translateY(-40px);
+}
+
+.kebab {
+    grid-area: kebab;
+    transform: translateY(-80px);
+}
+
+.gallery-img {
+    display: grid;
+    grid-template-areas: 'pizza beef-steaks burger'
+                        'levitation-pizza beef-steaks crispy'
+                        'levitation-pizza frittata kebab';
+    gap: 15px;
+}
+
+.gallery-img .img-item {
+    height: max-content;
+    border: 5px solid white;
+    position: relative;
+    overflow: hidden;
+}
+
+.gallery-img .img-item .over {
+    position: absolute;
+    color: white;
+    left: 0;
+    top: 1000px;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0,0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transition: 0.5s;
+}
+
+.gallery-img .img-item:hover .over {
+    top: 0;
+}
+
+.gallery-img .img-item:hover img {
+    transform: scale(1.1);
+}
+
+.gallery-img .img-item .over .desc p {
+    color: #ddd;
+}
+
+.gallery-img .img-item img {
+    width: 100%;
+    transition: 0.5s;
+}
+/* end gallery section  */
+
+/* start contact section  */
+.contact-info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.contact-info .contact-item {
+    display: flex;
+    gap: 10px;
+    padding: 30px;
+    width: calc(50% - 15px);
+    background-color: #f5f5f5;
+}
+
+.contact-info .contact-item .contact-icon {
+    width: 50px;
+    height: 50px;
+    background-color: #ce1212;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-info .contact-item .contact-icon i {
+    color: white;
+}
+
+.contact-info .contact-item .item-desc h3 {
+    color: #4f4f5a;
+    margin-bottom: 5px;
+}
+
+.your-info {
+    padding: 20px;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0,0.5);
+}
+
+.your-info input,
+.your-info textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ababb6;
+    outline-color: #ce1212;
+}
+
+.your-info button {
+    display: block;
+    margin: 0 auto;
+    padding: 15px 40px;
+    color: white;
+    background-color: #ce1212;
+    border-style: none;
+    border-radius: 30px;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.your-info button:hover {
+    background-color: red;
+}
+/* end contact section  */
+
+/* start footer  */
+footer {
+    background-color: #0a0809;
+    padding: 50px 0;
+    color: white;
+}
+
+footer .container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.about-mealify {
+    width: 265px;
+}
+
+.about-mealify .footer-logo {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.about-mealify .footer-logo img {
+    width: 40px;
+}
+
+.about-mealify .footer-logo .logo {
+    color: white;
+}
+
+.about-mealify h3 {
+    margin: 10px 0;
+    padding-bottom: 10px;
+    text-align: center;
+    border-bottom: 1px solid #ababb6;
+}
+
+.about-mealify .footer-social {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+.about-mealify .footer-social a {
+    color: white;
+    font-size: 25px;
+}
+
+.subscribe {
+    width: 545px;
+}
+
+.subscribe p{
+    margin: 10px 0;
+}
+
+.subscribe .footer-form {
+    display: flex;
+    gap: 5px;
+    margin-bottom: 10px;
+}
+
+.subscribe .footer-form input {
+    padding: 0 10px;
+    flex: 1;
+}
+
+.subscribe .footer-form .sub-button {
+    background-color: #ce1212;
+    padding: 10px;
+    transition: 0.5s;
+}
+
+.subscribe .footer-form .sub-button:hover {
+    background-color: red;
+}
+
+.subscribe .footer-form .sub-button button {
+    background-color: transparent;
+    border-style: none;
+    color: white;
+    font-size: 17px;
+    cursor: pointer;
+}
+
+.subscribe .footer-links {
+    margin-top: 10px;
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.subscribe .footer-links li {
+    padding: 5px;
+    width: calc(50% - 10px);
+}
+
+.subscribe .footer-links li:hover {
+    background-color: #37373f;
+    transform: translateX(5px);
+    transition: 0.5s;
+}
+
+.subscribe .footer-links a {
+    text-decoration: none;
+    color: white;
+}
+
+.subscribe .footer-links i {
+    margin-right: 5px;
+    font-size: 15px;
+}
+
+.touch {
+    width: 230px;
+}
+
+.touch h3 {
+    margin-bottom: 10px;
+}
+
+.touch .touch-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.touch .touch-item a {
+    color: #ce1212;
+    font-size: 20px;
+}
+/* end footer  */
+
+@media (min-width:768px){
+    .hero .hero-img {
+        width: 80%;
+    }
+}
+
+@media (min-width:992px){
+    .hero .hero-img {
+        width: 40%;
+    }
+
+    .your-info .input {
+        display: flex;
+        gap: 10px;
+    }
+}
+
+@media (max-width:1200px){
+    .navbar .nav-links {
+        display: none;
+    }
+
+    .navbar .icons .bar {
+        display: block;
+    }
+
+    .cards .item {
+        width: 300px;
+    }
+}
+
+@media (max-width:992px){
+    .hero {
+        height: 1000px;
+    }
+    
+    .container {
+        width: 750px;
+    }
+
+    .hero .container {
+        flex-direction: column-reverse;
+        justify-content: center;
+    }
+
+    .hero .hero-text {
+        text-align: center;
+    }
+
+    .gallery-img {
+        grid-template-columns: 50% 50%;
+        grid-template-areas: 'pizza beef-steaks'
+                            'burger beef-steaks'
+                            'levitation-pizza crispy'
+                            'frittata kebab';
+    }
+
+    .burger {
+        transform: translateY(-40px);
+    }
+
+    .crispy {
+        transform: translateY(0);
+    }
+
+    .levitation-pizza {
+        transform: translateY(-80px);
+    }
+
+    .frittata {
+        transform: translateY(-80px);
+    }
+
+    .kebab {
+        transform: translateY(-300px);
+    }
+
+    footer .about-mealify,
+    footer .subscribe,
+    footer .touch {
+        width: 100%;
+    }
+}
+
+@media (max-width:768px){
+    .container {
+        width: 550px;
+    }
+
+    .cards .item {
+        width: 100%;
+    }
+
+    .gallery-img {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .gallery-img .img-item {
+        width: 100%;
+        transform: translateY(0);
+    }
+
+    .contact-info .contact-item {
+        width: 100%;
+    }
+
+}
+
+@media (max-width:576px){
+    .hero {
+        height: 850px;
+    }
+
+    .container {
+        width: 100%;
+    }
+
+    .hero .hero-text .hero-links .play-icon {
+        width: 50px;
+    }
+}
